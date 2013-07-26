@@ -1,0 +1,99 @@
+# utf8 for all windows
+defutf8 on
+
+# i hate xon/xoff
+bind ^S
+
+# i split a lot, don't want to press shift
+bind s split
+
+# root shell plz
+bind r screen sudo -i
+
+# okay i hit this all the time and it's useless
+# duplicate the above instead
+bind ^R screen sudo -i
+
+# vi-style bindings
+bind j focus down
+bind k focus up
+
+# resize bindings
+bind = resize =
+bind + resize +3
+bind - resize -3
+
+# easy way to make a new window with a specified command
+bind ; colon 'screen '
+
+# Split window caption - complicated but cool
+# always enabled, as i like it even if not split
+# this is hard to understand so let's break it down
+# %? %F %{= ck}
+# if this is the focused region, set text to black on cyan
+# %: %{= wk} %?
+# if this is not the focused region, set text to black on white
+# %-w
+# list windows before the current one
+# %{= BW}
+# set text to bright white on bright blue
+# %50>
+# if truncation is needed, align to 50% here
+# %n %t
+# print window number and title
+# %{-}
+# set text to previous
+# %+w
+# list windows after the current one
+# %<
+# truncate now if we ran out of space
+caption always '%?%F%{= ck}%:%{= wk}%?%-w%{= BW}%50>%n %t%{-}%+w%<'
+
+# don't use the hardstatus for screen messages and be quick about them
+# oh and we like nethack messages as well, in fact i'm so used to them
+# that the normal ones seem weird
+# render them in, like, colour too as it makes them easier to see
+hardstatus off
+msgminwait .5
+msgwait 2
+nethack on
+sorendition =b ry
+
+# hardstatus!
+#hardstatus on
+#hardstatus alwayslastline '%{= ck}%-w%{= BW}%50>%n %t%{-}%+w%='
+
+# enable nonblocking so that when connections are dropped screen doesn't
+# hang up
+defnonblock on
+nonblock on
+
+# hardstatus message for windows that aren't shells
+# my shells set their own a la xterm
+defhstatus 'torne@whitefang n t'
+
+# some kind of magic that might be needed for hardstatus? who can say
+termcapinfo  * '' 'hs:ts=\E_:fs=\E\\:ds=\E_\E\\'
+
+# tell screen that no terminals have a hardstatus to stop it setting xterm title
+termcapinfo  * 'hs@:ts@:fs@:ds@'
+
+# hack on 256color support even if using xterm. also bce
+defbce on
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+term screen-256color-bce
+
+# make backgrounded window bells still include a bell character
+bell_msg "Bell in window %n^G"
+
+# allow the alt screen to be used so that vim etc can restore the screen
+#altscreen on
+# disabled because segfaults
+altscreen off
+
+# Ensure the shell is just plain, not a login shell, else we'll recurse
+shell $SHELL
+
+# Make a shell in screen 1 to leave 0 empty for irssi, but don't invoke
+# irssi automatically in case this is an accidental dupe
+screen 1

@@ -1,0 +1,38 @@
+[color]
+	ui = auto
+[diff]
+	guitool = gvimdiff
+	tool = vimdiff
+	renameLimit = 10000
+	renames = copies
+[difftool]
+	prompt = no
+[alias]
+	vimdiff = difftool
+	gvimdiff = difftool --gui
+	ff = merge --ff-only
+	pff = pull --ff-only
+	l = log @{upstream}..
+[merge]
+	tool = gvimdiff
+	conflictstyle = diff3
+	defaultToUpstream = yes
+[mergetool]
+	keepBackup = no
+[advice]
+	pushNonFastForward = false
+	statusHints = false
+	detachedHead = false
+[push]
+	default = upstream
+[sendemail]
+	confirm = always
+	chainreplyto = false
+[core]
+	excludesfile = ~/.gitexcludes
+	deltaBaseCacheLimit = 1G
+[help]
+	autocorrect = 10
+[include]
+	path = ~/.gitconfig.d/identity.inc
+	path = ~/.gitconfig.d/sso.inc
