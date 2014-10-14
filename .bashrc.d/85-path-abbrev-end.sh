@@ -5,7 +5,7 @@ declare -A path_abbrev_rev
 
 for s in ${!path_abbrev[@]}; do
     path_abbrev_rev[${path_abbrev[$s]}]=$s
-    alias ${s}="cd ${path_abbrev[$s]}"
+    eval "$s () { cd ${path_abbrev[$s]}/\"\$*\"; }"
 done
 
 # Here be dragons.

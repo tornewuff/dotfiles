@@ -36,3 +36,7 @@
 [include]
 	path = ~/.gitconfig.d/identity.inc
 	path = ~/.gitconfig.d/sso.inc
+[apply]
+	whitespace = fix
+[rebase]
+	autosquash = true
