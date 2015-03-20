@@ -6,3 +6,6 @@ export EDITOR=vim
 
 # KILL XON AND XOFF, seriously.
 stty stop undef start undef
+
+# kill command-not-found
+unset command_not_found_handle
