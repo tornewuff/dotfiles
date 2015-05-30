@@ -3,6 +3,7 @@ defutf8 on
 
 # i hate xon/xoff
 bind ^S
+bindkey ^S fit
 
 # i split a lot, don't want to press shift
 bind s split
