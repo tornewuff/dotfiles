@@ -1,3 +1,7 @@
+# define homeshick alias and completion
+source ~/.homesick/repos/homeshick/homeshick.sh
+source ~/.homesick/repos/homeshick/completions/homeshick-completion.bash
+
 # make less more awesome
 export LESS="-FRX"
 
