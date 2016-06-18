@@ -1,3 +1,4 @@
 # Load nvm to get node support.
-[ -r ~/.nvm/nvm.sh ] && . ~/.nvm/nvm.sh
-[ -r ~/.nvm/bash_completion ] && . ~/.nvm/bash_completion
+export NVM_DIR=$(realpath ~/.nvm)
+[ -r "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -r "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
