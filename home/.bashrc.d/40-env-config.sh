@@ -2,6 +2,9 @@
 source ~/.homesick/repos/homeshick/homeshick.sh
 source ~/.homesick/repos/homeshick/completions/homeshick-completion.bash
 
+# check for homeshick freshness
+homeshick --quiet refresh
+
 # make less more awesome
 export LESS="-FRX"
 
