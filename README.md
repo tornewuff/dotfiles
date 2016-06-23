@@ -9,7 +9,7 @@ If you are me, you can bootstrap this by installing
 [myrepos](http://myrepos.branchable.com/) and running:
 
 ```
-mr --trust-all https://raw.githubusercontent.com/tornewuff/dotfiles/master/mrconfig
+mr --trust-all bootstrap https://raw.githubusercontent.com/tornewuff/dotfiles/master/mrconfig
 ```
 
 If you aren't me, you shouldn't do this, as this runs commands!
