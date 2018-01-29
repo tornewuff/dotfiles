@@ -40,3 +40,5 @@
 	whitespace = fix
 [rebase]
 	autosquash = true
+[gerrit]
+	override-squash-uploads = false
