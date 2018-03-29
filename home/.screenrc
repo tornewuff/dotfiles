@@ -92,6 +92,9 @@ bell_msg "Bell in window %n^G"
 # disabled because segfaults
 altscreen off
 
+# no copyright notice, it's already very obvious when this config has entered
+startup_message off
+
 # Ensure the shell is just plain, not a login shell, else we'll recurse
 shell $SHELL
 
