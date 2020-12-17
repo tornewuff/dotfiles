@@ -1,1 +1,1 @@
-export PATH=$PATH:~/.cargo/bin
+export PATH=$PATH:$HOME/.cargo/bin
