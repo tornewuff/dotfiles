@@ -6,16 +6,16 @@
 
 # if running bash and not in POSIX mode (to give us a trapdoor via running sh)
 # and we're connected to an SSH-owned TTY
-if [ -n "$BASH_VERSION" -a -z "$POSIXLY_CORRECT" -a -n "$SSH_TTY" \
-     -a "$SCREEN_SESSION" != "no" -a -x /usr/bin/screen ]; then
+if [ -n "$BASH_VERSION" ] && [ -z "$POSIXLY_CORRECT" ] && [ -n "$SSH_TTY" ] &&
+    [ "$SCREEN_SESSION" != "no" ] && [ -x /usr/bin/screen ]; then
   # Save the 'real' DISPLAY and SSH_AUTH_SOCK we have been given from sshd
   # so we can reload them in .bashrc - this makes new shells do the 'right
   # thing' instead of inheriting them from the original screen process
-  echo -n $DISPLAY > ~/.current_display
-  echo -n $SSH_AUTH_SOCK > ~/.current_ssh_auth_sock
+  echo "$DISPLAY" > ~/.current_display
+  echo "$SSH_AUTH_SOCK" > ~/.current_ssh_auth_sock
 
   # explicitly specified screen?
-  if [ -z $SCREEN_SESSION ]; then
+  if [ -z "$SCREEN_SESSION" ]; then
     SCREEN_SESSION="main"
   fi
 

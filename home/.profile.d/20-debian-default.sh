@@ -9,11 +9,11 @@
 #umask 022
 
 # if running bash and not in POSIX mode, and not creating screen
-if [ -n "$BASH_VERSION" -a -z "$POSIXLY_CORRECT" \
-     -a -z "$CREATE_SCREEN_LATER" ]; then
+if [ -n "$BASH_VERSION" ] && [ -z "$POSIXLY_CORRECT" ] &&
+     [ -z "$CREATE_SCREEN_LATER" ]; then
     # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+        . "$HOME/.bashrc"
     fi
 fi
 
