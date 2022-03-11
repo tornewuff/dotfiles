@@ -42,3 +42,5 @@
 	autosquash = true
 [gerrit]
 	override-squash-uploads = false
+[init]
+	defaultBranch = main
