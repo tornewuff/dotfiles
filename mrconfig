@@ -8,6 +8,3 @@ order = 5
 [$HOME/.homesick/repos/dotfiles]
 checkout = homeshick clone git@github.com:tornewuff/dotfiles.git
 post_checkout = cp -i $MR_REPO/dot-mrconfig-basis $HOME/.mrconfig
-
-[$HOME/.homesick/repos/st-user-package]
-checkout = homeshick clone git@github.com:tornewuff/st-user-package.git
