@@ -3,13 +3,12 @@ dotfiles
 
 My dotfiles from $HOME. Comments and contributions welcomed.
 
-I use [homeshick](https://github.com/andsens/homeshick) to symlink these files into $HOME.
+I use [chezmoi](https://chezmoi.io/) to manage these files.
 
-If you are me, you can bootstrap this by installing
-[myrepos](http://myrepos.branchable.com/) and running:
+If you are me, you can bootstrap this with:
 
 ```
-mr --trust-all bootstrap https://raw.githubusercontent.com/tornewuff/dotfiles/master/mrconfig
+sh -c "$(curl -fsLS chezmoi.io/get)" -- -b "$HOME/.local/bin" init --apply tornewuff
 ```
 
-If you aren't me, you shouldn't do this, as this runs commands!
+If you aren't me, you shouldn't do this, probably?

@@ -1,2 +1,0 @@
-# Include dotfile config
-include = cat $HOME/.homesick/repos/dotfiles/mrconfig

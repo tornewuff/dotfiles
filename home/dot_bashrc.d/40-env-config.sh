@@ -1,9 +1,5 @@
-# define homeshick alias and completion
-source ~/.homesick/repos/homeshick/homeshick.sh
-source ~/.homesick/repos/homeshick/completions/homeshick-completion.bash
-
-# check for homeshick freshness
-homeshick --quiet refresh
+# chezmoi completions
+eval "$(chezmoi completion bash)"
 
 # make less more awesome
 export LESS="-FRX"
