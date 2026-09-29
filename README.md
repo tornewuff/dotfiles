@@ -1,14 +1,15 @@
-dotfiles
-========
+# dotfiles
 
-My dotfiles from $HOME. Comments and contributions welcomed.
-
-I use [chezmoi](https://chezmoi.io/) to manage these files.
+My dotfiles, managed with [chezmoi](https://chezmoi.io/).
 
 If you are me, you can bootstrap this with:
 
 ```
-sh -c "$(curl -fsLS chezmoi.io/get)" -- -b "$HOME/.local/bin" init --apply tornewuff
+sh -c "$(curl -fsLS https://get.chezmoi.io/lb)" -- init --apply tornewuff
 ```
 
-If you aren't me, you shouldn't do this, probably?
+If you aren't me, you probably shouldn't do this.
+
+## License
+
+MIT

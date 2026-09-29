@@ -1,0 +1,39 @@
+[advice]
+	detachedHead = false
+	pushNonFFCurrent = false
+	statusHints = false
+[alias]
+	vimdiff = difftool
+	gvimdiff = difftool --gui
+	ff = merge --ff-only
+	pff = pull --ff-only
+	l = log @{upstream}..
+[apply]
+	whitespace = fix
+[checkout]
+	workers = -1
+[diff]
+	guitool = gvimdiff
+	renames = copies
+	renameLimit = 10000
+	tool = vimdiff
+[difftool]
+	prompt = no
+[gerrit]
+	override-squash-uploads = false
+[help]
+	autocorrect = 10
+[init]
+	defaultBranch = main
+[merge]
+	conflictstyle = diff3
+	tool = gvimdiff
+[mergetool]
+	keepBackup = no
+[push]
+	default = simple
+[rebase]
+	autosquash = true
+[user]
+	email = {{ .email | quote }}
+	name = {{ .name | quote }}
