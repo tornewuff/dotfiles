@@ -8,7 +8,7 @@ if ! command -v cargo-binstall >/dev/null 2>&1; then
 fi
 
 if ! command -v cargo-install-update >/dev/null @2>&1; then
-    cargo-binstall cargo-update
+    cargo-binstall -y cargo-update
 fi
 
 cargo-install-update install-update -i cargo-binstall cargo-update jj-cli
